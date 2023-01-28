@@ -4,5 +4,13 @@ window.addEventListener('keydown', function(e){
     if(!audio) return; // stop playing if key is not found
     audio.currentTime = 0;
     audio.play();
-    console.log(key)
-}) 
+    key.classList.add('playing');
+});
+
+const keyPresses = document.querySelectorAll('.key');
+for (let keyPress of keyPresses) {
+    keyPress.addEventListener('transitionend', function removeTransition(e) {
+        if(e.propertyName !== 'transform') return; // skip if does not transform
+        this.classList.remove('playing');
+    })
+}
