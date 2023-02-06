@@ -32,6 +32,7 @@ html {
   margin: 2px;
   float: left;
   border-radius: 0 0 3px 3px;
+  transition: all 0.07s ease;
 }
 
 .key.black-key::after {
@@ -48,6 +49,13 @@ html {
   width: 200px;
   position: absolute;
   top: 23px;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: rgba(255, 0, 0, 0.8);
+  box-shadow: orange;
+  background-color: orange;
 }
 
 @media (max-width: 768px) {
